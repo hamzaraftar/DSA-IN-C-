@@ -14,7 +14,7 @@ int main()
     {
         for (int j = i + 1; j < size; j++)
         {
-            if (arr[i] > arr[j])
+            if (arr[i] > arr[j]) // Ascending Order if we change   sign "<" then it is Descending Order
             {
                 temp = arr[i];
                 arr[i] = arr[j];
