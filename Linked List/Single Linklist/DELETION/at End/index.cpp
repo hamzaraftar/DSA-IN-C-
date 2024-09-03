@@ -3,17 +3,17 @@ using namespace std;
 
 int main()
 {
+
     struct node
     {
         int data;
         struct node *next;
     };
-    struct node *head, *temp;
+    struct node *head, *temp, *preNode;
     head = 0;
     int choise;
     while (choise)
     {
-
         node *newnode = new node;
         cout << "Enter data :" << endl;
         cin >> newnode->data;
@@ -37,18 +37,26 @@ int main()
         temp = temp->next;
     }
 
-    // -- -- -- -- -- -- --delete from begging-- -- -- -- -- -- -- -temp = head;
-    head = head->next;
+    // -------------- delete from  end---------------
+
+    temp = head;
+    while (temp->next != 0)
+    {
+        preNode = temp;
+        temp = temp->next;
+    }
+    preNode->next = 0;
+    // "note" ==== preNode poniter is only for "delete from  end"
     delete (temp);
-    cout << "Linklist after deletion at beginning" << endl;
 
     // -----------------for prient of linklist --------------
+
+    cout << "Linklist after deletion at End  :  " << endl;
     temp = head;
     while (temp != 0)
     {
         cout << temp->data << "   " << endl;
         temp = temp->next;
     }
-
     return 0;
 }
