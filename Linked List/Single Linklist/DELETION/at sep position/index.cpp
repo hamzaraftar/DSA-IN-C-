@@ -3,16 +3,18 @@ using namespace std;
 
 int main()
 {
+    int pos, i = 1;
     struct node
     {
         int data;
         struct node *next;
     };
-    struct node *head, *temp, *preNode;
+    struct node *head, *temp, *nextnode;
     head = 0;
     int choise;
     while (choise)
     {
+
         node *newnode = new node;
         cout << "Enter data :" << endl;
         cin >> newnode->data;
@@ -36,26 +38,25 @@ int main()
         temp = temp->next;
     }
 
-    // -------------- delete from  end---------------
-
+    //-------------- deletion  from  specified postion---------------
     temp = head;
-    while (temp->next != 0)
+    cout << "Enter position number:" << endl;
+    cin >> pos;
+    while (i < pos - 1)
     {
-        preNode = temp;
         temp = temp->next;
+        i++;
     }
-    preNode->next = 0;
-    // "note" ==== preNode poniter is only for "delete from  end"
-    delete (temp);
-
-    // -----------------for prient of linklist --------------
-
-    cout << "Linklist after deletion at End  :  " << endl;
+    nextnode = temp->next;
+    temp->next = nextnode->next;
+    delete (nextnode);
+    cout << "Linklist after deletion at  specified postion :  " << endl;
     temp = head;
     while (temp != 0)
     {
         cout << temp->data << "   " << endl;
         temp = temp->next;
     }
+
     return 0;
 }
