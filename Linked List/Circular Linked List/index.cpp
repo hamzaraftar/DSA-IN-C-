@@ -6,6 +6,7 @@ struct node
     struct node *next;
 };
 struct node *head;
+/*
 void CreateDll()
 {
     int choise;
@@ -27,6 +28,35 @@ void CreateDll()
             temp = newNode;
         }
         temp->next = head;
+        cout << "Do you want to continue press (1,0) : " << endl;
+        cin >> choise;
+    }
+}
+*/
+
+//----------------------------- Maintain tail pointer ----------------------------
+
+void CreateDll()
+{
+    int choise;
+    head = 0;
+    struct node *tail;
+    while (choise)
+    {
+        node *newNode = new node;
+        cout << "Enter data :" << endl;
+        cin >> newNode->data;
+        newNode->next = 0;
+        if (head == 0)
+        {
+            head = tail = newNode;
+        }
+        else
+        {
+            tail->next = newNode;
+            tail = newNode;
+        }
+        tail->next = head;
         cout << "Do you want to continue press (1,0) : " << endl;
         cin >> choise;
     }
