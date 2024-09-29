@@ -61,9 +61,11 @@ void Display()
 
 void Peek()
 {
-    cout << "Data in frot is " << queue[front]<< endl;
+    cout << "Data in frot is " << queue[front] << endl;
 }
 int main()
 {
+    enqueue(5);
+    Display();
     return 0;
 }
