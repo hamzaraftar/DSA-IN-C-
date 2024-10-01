@@ -1,15 +1,15 @@
 #include <iostream>
 using namespace std;
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *head, *temp, *nextnode;
 
 int main()
 {
     int pos, i = 1;
-    struct node
-    {
-        int data;
-        struct node *next;
-    };
-    struct node *head, *temp, *nextnode;
     head = 0;
     int choise;
     while (choise)

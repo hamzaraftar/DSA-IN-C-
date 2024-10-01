@@ -1,16 +1,16 @@
 #include <iostream>
 using namespace std;
-
+struct node
+{
+    int data;
+    struct node *next;
+};
+struct node *head, *temp;
 int main()
 {
     int pos, i;
-    struct node
-    {
-        int data;
-        struct node *next;
-    };
-    struct node *head, *temp;
-    head = 0;
+
+        head = 0;
     int choise;
     while (choise)
     {
