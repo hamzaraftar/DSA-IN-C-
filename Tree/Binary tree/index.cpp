@@ -6,7 +6,7 @@ struct node
     struct node *left;
     struct node *right;
 };
-//Creation of Binary tree
+// Creation of Binary tree
 struct node *Create()
 {
     int x;
@@ -25,10 +25,40 @@ struct node *Create()
     return newNode;
 }
 
+void Preorder(struct node *root)
+{
+    if (root == 0)
+    {
+        return;
+    }
+    else
+    {
+        cout << root->data << endl;
+        Preorder(root->left);
+        Preorder(root->right);
+    }
+}
+void inorder(struct node *root)
+{
+    if (root == 0)
+    {
+        return;
+    }
+    else
+    {
+        inorder(root->left);
+        cout << root->data << endl;
+        inorder(root->right);
+    }
+}
+
 int main()
 {
     struct node *root;
     root = 0;
     root = Create();
+    Preorder(root);
+    inorder(root);
+    cout << "preorder :" << endl;
     return 0;
 }
